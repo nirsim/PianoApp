@@ -1,0 +1,14 @@
+
+
+      
+<div class="calendar">
+        <ul data-ng-repeat="days in weekdays" >
+            <li ng-hide="days.day == null"> {{days.day}} </li>
+            
+            <ul data-ng-repeat="hour in weekdays" class="list-inline">
+                    <li ng-hide="days.day == null || hour.hr==null" > {{hour.hr}} </li>
+            </ul>              
+        </ul>
+    
+    </div>
+    

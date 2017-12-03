@@ -1,7 +1,7 @@
 
     <div>
             <input type="text" ng-model="search">{{search}}
-            <ul ng-repeat="name in familyList | filter:search | orderBy:'-name'">
+            <ul ng-repeat="name in familyList | filter:search | orderBy:'name'">
               <li>{{name.name}} - {{name.position}} - {{name.age()}}</li>
       
       
