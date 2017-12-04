@@ -1,12 +1,43 @@
 
-    <div>
-            <input type="text" ng-model="search">{{search}}
-            <ul ng-repeat="name in familyList | filter:search | orderBy:'name'">
-              <li>{{name.name}} - {{name.position}} - {{name.age()}}</li>
+<label for="StudentName">Student Name: </label>
+<input type="text" name="StudentName" id="StudentName" placeholder="Fill in Stdeunt name" ng-model="name"><br>
+
+<label for="position">position: </label>
+<input type="text" name="position" id="posiiton" placeholder="Fill in Stdeunt position" ng-model="position"><br>
+
+<label for="byear">Birth year: </label>
+<input type="number" name="byear" id="byear" placeholder="Fill in Stdeunt start year" ng-model="byear"><br>
+
+  
+<br>
+<br>
+
+
+<button ng-click="addStudent()">Add student</button>
+<br>
+  
+
+
+  
+<br>
+<br>
+
+<select ng-model="delName" ng-options="std.name for std in familyList"  ></select>
+
+  <br>
+  <br>
+  <button ng-click="delStudent()">Remove student</button>
+<hr>
+
+<div>
+  <br>
+        <input type="text" ng-model="search">{{search}}
+        <ul ng-repeat="name in familyList | filter:search | orderBy:'name'">
+          <li>{{name.name}} - {{name.position}} - {{name.age()}}</li>
+  
+  
+  
+        </ul>
+        <a href="#!/"> main</a>
+      </div>
       
-      
-      
-            </ul>
-            <a href="#!/"> main</a>
-          </div>
-          

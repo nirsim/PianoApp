@@ -1,57 +1,48 @@
-var pianoCtrl = pianoApp.controller("pianoCtrl", function($scope) {
-  $scope.familyList = [
-                        {'name':'Nir simovich',
-                        'position':'Father',
-                        'byear': 1973,
-                        'age': function (){
-                          var d = new Date();
-                          return d.getFullYear() - this.byear ;
-                          }
-                        },
-                        {'name':'Liat Simovich',
-                        'position':'Mother',
-                        'byear': 1973,
-                        'age': function (){
-                          var d = new Date();
-                          return d.getFullYear() - this.byear ;
-                          }
-                        },
-                        {'name':'Yael Simovich',
-                        'position':'Daughter',
-                        'byear': 2003,
-                        'age': function (){
-                          var d = new Date();
-                          return d.getFullYear() - this.byear ;
-                          }
-                        },
-                        {'name':'Karen Simovich',
-                        'position':'Daughter',
-                        'byear': 2007,
-                        'age': function (){
-                          var d = new Date();
-                          return d.getFullYear() - this.byear ;
-                          }
-                        },
-                        {'name':'Tomer Simovich',
-                        'position':'Son',
-                        'byear': 2010,
-                        'age': function (){
-                          var d = new Date();
-                          return d.getFullYear() - this.byear ;
-                          }
-                        }
-                    ];
-            
-          $scope.AddStudent = function(){
-            $scope.familyList.push(
-              {name: $scope.newStudent.name,
-                position: $scope.newStudent.position,
-                byear: $scope.newStudent.byear,
-                age: $scope.newStudent.age()
-              }
-            )
-          }
+var pianoCtrl = pianoApp.controller("pianoCtrl", function($scope,Student,$rootScope,$http) {
 
-      });
+
+  $rootScope.familyList = []
+
+  
+    $http.get("studentList.json").then(function mySuccess(response) {
+      for (var i = 0; i < response.data.length; i++) {
+        $rootScope.familyList.push(new Student(response.data[i].name, response.data[i].position, response.data[i].byear))  
+      }
+      //alert("success" + JSON.stringify(response.status));
+    }, function myError(response) {
+      alert("error" + JSON.stringify(response.status));
+    })
+
+
+$scope.name="";
+$scope.position="";
+$scope.byear=2015;
+
+$scope.delName="";
+
+
+
+
+$scope.addStudent = function(){
+      $rootScope.familyList.push(new Student($scope.name,$scope.position,$scope.byear));
+        };
+
+
+$rootScope.delStudent = function(){
+    
+         for (var i = 0; i < $rootScope.familyList.length; i++) {
+              if ($rootScope.familyList[i].name === $scope.delName.name) {
+                $rootScope.familyList.splice(i, 1);
+                  i--;
+              }
+          }
+          
+      };
+      
 
       
+                
+});
+
+
+

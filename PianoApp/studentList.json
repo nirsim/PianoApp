@@ -1,0 +1,22 @@
+[
+    {"name":"Nir simovich",
+    "position":"Father",
+    "byear": 1973
+    },
+    {"name":"Liat Simovich",
+    "position":"Mother",
+    "byear": 1973
+    },
+    {"name":"Yael Simovich",
+    "position":"Daughter",
+    "byear": 2003
+    },
+    {"name":"Karen Simovich",
+    "position":"Daughter",
+    "byear": 2007
+    },
+    {"name":"Tomer Simovich",
+    "position":"Son",
+    "byear": 2010
+    }
+]
