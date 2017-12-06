@@ -6,7 +6,7 @@
 
 <div>
 <h4>Add to cell</h4>
-<input  id="inp" type="text" ng-model="dayCell" autofocus class="form-control">
+<input  id="inp" type="text" ng-model="dayCell"  class="form-control">
 </div>
 
 <div>
@@ -15,55 +15,63 @@
 <div class="container">
         
     <div class="page-header">
-    <h1>{{task.name}}</h1>
+        <h1>{{task.name}}</h1>
     </div>
 
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
     <form class="form-horizontal">
         <div class="form-group">
-        <label class="control-label col-sm-2" for="name">Name:</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" placeholder="Enter task" ng-model="task.name">
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="payment">Payment:</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" id="payment" placeholder="Enter payment" ng-model="task.payment" min="0" step="150"  value="0.00">
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="yearsPlaying">Years playing:</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" id="yearsPlaying" placeholder="Years playing" ng-model="task.yearsPlaying">
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="notes">Notes:</label>
-        <div class="col-sm-10">
-            <textarea class="form-control" rows="3" id="notes" placeholder="Notes list" ng-model="task.notes"></textarea>
-        </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="compositions">Compositions:</label>
-        <div class="col-sm-10">
-        
-        <select ng-model="notesList" id="note" ng-options="pn.composer as pn.label group by pn.compositions for pn in notesList"></select>
-
-        <ul ng-repeat="name in familyList" class="well">
-                <li>{{5+5}}</li>
-
-            </ul>
-        </div>
-        </div>
-        <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <div class="pull-right">
-            <button type="summit" class="btn btn-default" ng-click="cancel()">Cancel</button>
-            <button type="summit" class="btn btn-primary" ng-click="update()">Update</button>
-            <button type="summit" class="btn btn-danger" ng-click="remove()">Delete</button>
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="Enter task" ng-model="task.name">
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="payment">Payment:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="payment" placeholder="Enter payment" ng-model="task.payment" min="0" step="150"  value="0.00">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="yearsPlaying">Years playing:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="yearsPlaying" placeholder="Years playing" ng-model="task.yearsPlaying">
+            </div>
+        </div>
+        <div class="form-group">
+                <label class="control-label col-sm-2" for="notes">Notes:</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="3" id="notes" placeholder="Notes list" ng-model="task.notes" ></textarea>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="compositions">Compositions:</label>
+            <div class="col-sm-10">
+                    <button ng-click="addNote()">Add note</button>
+                <br>
+                <select ng-model="notesList" ng-options="pn.compositions as pn.compositions group by pn.composer for pn in notesList" autofocus></select>
+                <br>
+                <button ng-click="delNote()">Remove composer</button>
+                <hr>
+
+                <div class="well">
+                <ul ng-repeat="pn in notesList | orderBy:'compositions'">
+                        <li>{{pn.compositions}}</li>
+                            
+                </ul>
+                </div>
+
+
+            </div>
+            </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="pull-right">
+                <button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-click="update()">Update</button>
+                <button type="submit" class="btn btn-danger" ng-click="remove()">Delete</button>
+                </div>
+            </div>
         </div>
     </form>
     </div>
@@ -89,7 +97,7 @@
                 </th>
                 <td data-ng-repeat="day in weekdays">
                     <div class="well" li ng-hide="days.day == null || hour.hr==null">
-                        </div> td
+                        </div> {{note}}
                     
                 </td>
                     

@@ -1,4 +1,4 @@
-var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($scope) {
+var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($rootScope,$scope,$http,Note,Student) {
     $scope.weekdays = [ 'Sunday',
                         'Monday',
                         'Tuesday',
@@ -18,6 +18,43 @@ var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($scope) {
                     '17:00'
                     ];
 
+
+
+    $scope.notesList = []
+    
+      $http.get("app/data/notesList.json").then(function mySuccess(response) {
+        for (var i = 0; i < response.data.length; i++) {
+          $scope.notesList.push(new Note(
+                                                  response.data[i].composer,
+                                                  response.data[i].compositions
+                                                )
+                                    )  
+        }
+      }, function myError(response) {
+        alert("notesList error" + JSON.stringify(response.status));
+      })
+  
+  $scope.composer="";
+  $scope.compositions="";
+  
+  
+  
+  $scope.addNote = function(){
+        $scope.notesList.push(new Note($scope.composer,$scope.compositions));
+          
+          };
+  
+          
+  $scope.delComposer = function(){
+      
+            for (var i = 0; i < $scope.notesList.length; i++) {
+                if ($scope.notesList[i].composer === $scope.delNote.composer) {
+                  $scope.notesList.splice(i, 1);
+                    i--;
+                }
+            }
+        };
+     
 
 });
   

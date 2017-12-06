@@ -1,5 +1,5 @@
 
-recipeApp.controller("HomeCtrl", function ($scope, $uibModal) {
+pianoApp.controller("HomeCtrl", function ($scope, $uibModal) {
     $scope.login = function() {
         $uibModal.open({
             templateUrl: "/login.html",

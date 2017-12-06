@@ -1,36 +1,35 @@
-
+<div class="container">
+  <div class-"well">
 <label for="StudentName">Student Name: </label>
-<input type="text" name="StudentName" id="StudentName" placeholder="Fill in Stdeunt name" ng-model="name"><br>
+<input type="text" name="name" id="name" placeholder="Fill in Stdeunt name" ng-model="name"><br>
 
 <label for="email">email: </label>
-<input type="text" name="email" id="email" placeholder="Fill in Stdeunt email" ng-model="position"><br>
+<input type="text" name="email" id="email" placeholder="Fill in Stdeunt email" ng-model="email"><br>
 
 <label for="pass">password: </label>
-<input type="number" name="pass" id="pass" placeholder="Fill in Stdeunt password" ng-model="byear"><br>
+<input type="string" name="pass" id="pass" placeholder="Fill in Stdeunt password" ng-model="pass"><br>
 
 <label for="byear">Birth year: </label>
 <input type="number" name="byear" id="byear" placeholder="Fill in Stdeunt start year" ng-model="byear"><br>
 
-  
+<button ng-click="addStudent()" class="well-sm">Add student</button>
 <br>
+</div>
 <br>
 
 
-<button ng-click="addStudent()">Add student</button>
+<select ng-model="delName" ng-options="std.name for std in familyList" class="form-control"></select>
+
 <br>
-<select ng-model="delName" ng-options="std.name for std in familyList"></select>
-<br>
-<button ng-click="delStudent()">Remove student</button>
+<button ng-click="delStudent()" class="well-sm">Remove student</button>
 <hr>
-<div>
+<div class="well">
+  
+  <input type="text" ng-model="search">
   <br>
-        <input type="text" ng-model="search">{{search}}
-        <ul ng-repeat="name in familyList | filter:search | orderBy:'name'">
-          <li>{{name.name}} - {{name.position}} - {{name.age()}}</li>
-  
-  
-  
-        </ul>
-        <a href="#!/"> main</a>
-      </div>
-      
+  {{search}}
+  <ul ng-repeat="name in familyList | filter:search | orderBy:'name'">
+    <li>{{name.name}} - {{name.email}} - {{name.pass}} - {{name.byear}}</li>
+  </ul>
+</div>
+</div>

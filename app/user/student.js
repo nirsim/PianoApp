@@ -19,6 +19,18 @@ return Student;
 }) ;
 
 
+pianoApp.factory ("Note",function(){
+    
+    function Note(composer,compositions){
+            this.composer = composer;
+            this.compositions = compositions;
+            
+    }
+    return Note;
+    
+    }) ;
+    
+
 
 
 /* Active student service*/

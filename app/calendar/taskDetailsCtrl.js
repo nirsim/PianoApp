@@ -7,7 +7,7 @@ pianoApp.controller("TaskDetailsCtrl", function ($scope, $location, tasks, activ
         }
     
         // Creating a copy of the task
-                $scope.task = new Task(tasks.get($routeParams.taskIndex));
+        $scope.task = new Task(tasks.get($routeParams.taskIndex));
     
         $scope.cancel = function() {
             $location.path("/tasks");
