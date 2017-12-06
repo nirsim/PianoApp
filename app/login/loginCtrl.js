@@ -1,7 +1,7 @@
 pianoApp.controller("loginCtrl", function ($scope, $http, $location, activeUser, Student, Task, tasks) {
 
 
-    $scope.email = "FNir";
+    $scope.email = "FNir@url.com";
     $scope.password = "123";
 
     $http.get("app/data/studentList.json").then(function (response) {

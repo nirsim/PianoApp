@@ -1,4 +1,4 @@
-var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($rootScope,$scope,$http,Note,Student) {
+var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($rootScope,$scope,$http,Note,Student,Task) {
     $scope.weekdays = [ 'Sunday',
                         'Monday',
                         'Tuesday',
@@ -21,13 +21,21 @@ var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($rootScope,$sc
 
 
     $scope.notesList = []
+
+    /*
+    $scope.LessonList = {
+        "Sunday": {
+            "09:00": users[10]
+        }
+    }
+    */
     
       $http.get("app/data/notesList.json").then(function mySuccess(response) {
         for (var i = 0; i < response.data.length; i++) {
           $scope.notesList.push(new Note(
-                                                  response.data[i].composer,
-                                                  response.data[i].compositions
-                                                )
+                                            response.data[i].composer,
+                                            response.data[i].compositions
+                                        )
                                     )  
         }
       }, function myError(response) {

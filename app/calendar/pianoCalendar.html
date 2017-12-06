@@ -4,10 +4,6 @@
 <br>
 
 
-<div>
-<h4>Add to cell</h4>
-<input  id="inp" type="text" ng-model="dayCell"  class="form-control">
-</div>
 
 <div>
 
@@ -47,15 +43,15 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="compositions">Compositions:</label>
             <div class="col-sm-10">
-                    <button ng-click="addNote()">Add note</button>
+                    <button ng-click="addNote()" ng-model="addNote">Add note</button>
                 <br>
-                <select ng-model="notesList" ng-options="pn.compositions as pn.compositions group by pn.composer for pn in notesList" autofocus></select>
+                <select ng-model="blabla" ng-options="pn.compositions as pn.compositions group by pn.composer for pn in notesList" autofocus></select>
                 <br>
                 <button ng-click="delNote()">Remove composer</button>
                 <hr>
 
                 <div class="well">
-                <ul ng-repeat="pn in notesList | orderBy:'compositions'">
+                <ul ng-repeat="pn in notesList | orderBy:'compositions'"ng-model="comp">
                         <li>{{pn.compositions}}</li>
                             
                 </ul>
@@ -76,17 +72,22 @@
     </form>
     </div>
 
-
 </div>
 
-
-
-    <br>        
+<div>
+<br>        
 
     <!--Calendar-->    
+
+    <div>
+            <h4>Add to cell</h4>
+            <input  id="inp" type="text" ng-model="dayCell"  class="form-control">
+            </div>
+            <br>
+
     <table class="table-bordered table-hover table-striped">
        <tr>
-           <th class="alert-success">{{dayCell}}</th>
+           <th>{{dayCell}}</th>
            <th data-ng-repeat="day in weekdays" class="well alert-success">
             {{day}}</th>
         </tr>
@@ -96,13 +97,13 @@
   
                 </th>
                 <td data-ng-repeat="day in weekdays">
-                    <div class="well" li ng-hide="days.day == null || hour.hr==null">
-                        </div> {{note}}
+                    <div class="well" ng-show="days.day !== null || !hour.hr==null" ng-model="task">
+                            {{getLesson(day, hour)}}  </div> 
                     
                 </td>
                     
         </tr>            
     </table>
-
+</div>
 </div>
 <br>
