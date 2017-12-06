@@ -1,0 +1,27 @@
+table {border: 1px solid black;
+        
+    }
+td, tr, th{border: 1px solid black;
+    color:blue;
+    
+}    
+
+#inp{width:120px}
+
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    font-family: "Pacifico";
+}
+
+.jumbotron .container h1 {
+    font-family: "Pacifico";
+    font-size: 4em;
+}
+
+.recipe-item {
+    cursor: pointer;
+}

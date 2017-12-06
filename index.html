@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pianoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piano</title>
+
+    <!-- angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    
+    <!--Angular bootstrap-->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+
+    <!--scripts-->    
+    <script src="app/pianoApp.js"></script>
+    <script src="app/model/pianoCtrl.js"></script>
+    <script src="app/calendar/pianoDaysCtrl.js"></script>
+    <script src="app/model/navCtrl.js"></script>
+    <script src="app/model/pianosvc.js"></script>
+    <script src="app/home/homeCtrl.js"></script>
+    <script src="app/calendar/taskDetailsCtrl.js"></script>
+    <script src="app/user/student.js"></script>
+    <script src="app/login/loginCtrl.js"></script>
+    <script src="app/data/studentList.json"></script>
+    <script src="app/data/noteslist.json"></script>
+  
+    
+
+
+<!--bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- bootstrap jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- bootstrap JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+        <nav class="navbar navbar-default bg-dark navbar-dark" role="navigation" ng-controller="NavCtrl">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Piano with clasS</a>
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                            <li ng-show="isLoggedIn()"><a href="#!/">Home</a></li>
+                        <li ng-show="isLoggedIn()"><a href="#!/pianoCalendar">Calendar</a></li>
+                        <li ng-show="isLoggedIn()"><a href="#!/pianoUser">Students</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-hide="isLoggedIn()"><a href="#">Login</a></li>
+                        <li ng-show="isLoggedIn()"><a href="#">Logout</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+
+  <ng-view></ng-view>
+
+    
+</Div>    
+</body>
+</html>
+

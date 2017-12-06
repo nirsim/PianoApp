@@ -1,4 +1,4 @@
-var pianoApp = angular.module("pianoApp", ["ngRoute"]);
+var pianoApp = angular.module("pianoApp", ["ngRoute","ngAnimate", "ui.bootstrap"]);
 
 pianoApp.config(function($routeProvider) {
     $routeProvider

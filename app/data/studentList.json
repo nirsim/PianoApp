@@ -1,0 +1,36 @@
+[
+    {   "name":"Nir simovich",
+        "email":"FNir",
+        "pass":"123",
+        "byear": 1973
+    },
+    {   "name":"Liat Simovich",
+        "email":"MLiat",
+        "pass":"123",
+        "byear": 1973
+    },
+    {   "name":"Yael Simovich",
+        "email":"DYael",
+        "pass":"123",
+        "byear": 2003
+    },
+    {   "name":"Karen Simovich",
+        "email":"DKaren",
+        "pass":"123",
+        "byear": 2007
+    },
+    {   "name":"Tomer Simovich",
+        "email":"STomer",
+        "pass":"123",
+        "byear": 2010
+    }
+]
+
+
+
+/*
+   {"name":"Tomer Simovich",
+    "position":"Son",
+    "byear": 2010
+    }
+*/
