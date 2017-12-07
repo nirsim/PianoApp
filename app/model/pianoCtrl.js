@@ -1,6 +1,8 @@
 var pianoCtrl = pianoApp.controller("pianoCtrl", function($scope,Student,$rootScope,$http,Task,tasks,Note) {
 
   $rootScope.familyList = []
+
+  
   
     $http.get("app/data/studentList.json").then(function mySuccess(response) {
       for (var i = 0; i < response.data.length; i++) {

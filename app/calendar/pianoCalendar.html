@@ -51,7 +51,7 @@
                 <hr>
 
                 <div class="well">
-                <ul ng-repeat="pn in notesList | orderBy:'compositions'"ng-model="comp">
+                <ul ng-repeat="pn in notesList | orderBy:'compositions' "ng-model="comp">
                         <li>{{pn.compositions}}</li>
                             
                 </ul>
@@ -74,7 +74,7 @@
 
 </div>
 
-<div>
+<div class="container">
 <br>        
 
     <!--Calendar-->    
@@ -85,20 +85,21 @@
             </div>
             <br>
 
-    <table class="table-bordered table-hover table-striped">
+    <table class="table-bordered table-hover table-striped tblCal">
        <tr>
            <th>{{dayCell}}</th>
-           <th data-ng-repeat="day in weekdays" class="well alert-success">
+           <th data-ng-repeat="day in weekdays" class="well alert-success" ng-model="updDay">
             {{day}}</th>
         </tr>
 
-        <tr data-ng-repeat="hour in hours"  class="well alert-info">
+        <tr data-ng-repeat="hour in hours"  class="well alert-info" ng-model="updHour">
                 <th class="well"> {{hour}} 
   
                 </th>
                 <td data-ng-repeat="day in weekdays">
-                    <div class="well" ng-show="days.day !== null || !hour.hr==null" ng-model="task">
-                            {{getLesson(day, hour)}}  </div> 
+                    <div class="tblCal">
+                            {{getLesson(day, hour)}}  
+                    </div> 
                     
                 </td>
                     

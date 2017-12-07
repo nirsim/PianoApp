@@ -9,12 +9,18 @@ td, tr, th{border: 1px solid black;
 #inp{width:120px}
 
 
-.navbar {
-    margin-bottom: 0;
+  a{
+    margin-bottom: 2px;
+    -webkit-text-fill-color: rgb(253, 200, 80);
+    text-shadow:0px 1px yellow ;
+    font-size: 20px;
 }
 
-.navbar-brand {
-    font-family: "Pacifico";
+label{
+    
+    -webkit-text-fill-color: rgb(253, 200, 80);
+    text-shadow:0px 0px yellow ;
+    font-size: 10px;
 }
 
 .jumbotron .container h1 {
@@ -22,6 +28,24 @@ td, tr, th{border: 1px solid black;
     font-size: 4em;
 }
 
-.recipe-item {
-    cursor: pointer;
+
+
+.navbar.navbar-default .navbar-collapse {
+    border: none;
+    box-shadow: none;
+  }
+
+.navbar {
+    background-image: url("/app/images/PianoMusicFanpop.jpg");
+  background-size:100%; 
+    }
+
+
+.tblCal {
+    background-image: url("/app/images/grand-piano.jpg");
+    background-repeat: no-repeat;
+    width:100%;
+    color:white;
+    padding-left:15px;
+    text-shadow:0px 0px yellow ;
 }
