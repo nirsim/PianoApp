@@ -39,7 +39,7 @@ var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($rootScope,$sc
                 +", " + $scope.notesList[0].compositions[0];
         /*console.log("success: " + $scope.LessonList.student)*/
         }
-        console.log("fail: " + $scope.LessonList.day + " " + this.day + " " +$scope.LessonList.hour + " " + this.hour);
+        //console.log("fail: " + $scope.LessonList.day + " " + this.day + " " +$scope.LessonList.hour + " " + this.hour);
     }
 
 
