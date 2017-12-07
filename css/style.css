@@ -36,13 +36,13 @@ label{
   }
 
 .navbar {
-    background-image: url("app/images/PianoMusicFanpop.jpg");
+    background-image: url("/app/images/PianoMusicFanpop.jpg");
   background-size:100%; 
     }
 
 
 .tblCal {
-    background-image: url("app/images/grand-piano.jpg");
+    background-image: url("/app/images/grand-piano.jpg");
     background-repeat: no-repeat;
     width:100%;
     color:white;
@@ -51,12 +51,21 @@ label{
 }
 
 
-
-.login {
-    background-image: url("app/images/grand-piano.jpg");
-/*    background-repeat: no-repeat;  */
-    
+.login
+ {
+    background-image: url("/app/images/grand-piano.jpg");
+    background-repeat: no-repeat;    
+    background-size: 100%;
+    background-position: center;
     color:white;
-    padding-left:15px;
     text-shadow:0px 0px yellow ;
+    
 }
+
+body{background-color: grey;
+    
+    };
+
+.head{color:white;
+    text-shadow:0px 0px yellow ;
+   };
