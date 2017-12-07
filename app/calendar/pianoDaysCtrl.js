@@ -35,7 +35,7 @@ var pianoDaysCtrl = pianoApp.controller("pianoDaysCtrl", function($rootScope,$sc
     
     
             if ($scope.LessonList.day == this.day && $scope.LessonList.hour == this.hour) {
-                return $scope.LessonList.student + ", " + $scope.notesList[0].composer
+                return $scope.LessonList.student + ", "// + $scope.notesList[0].composer
                 +", " + $scope.notesList[0].compositions[0];
         /*console.log("success: " + $scope.LessonList.student)*/
         }
